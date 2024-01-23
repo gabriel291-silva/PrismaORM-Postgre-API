@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db-postgres-teste:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    container_name: "db-postgres-teste"
+    restart: always
+    volumes:
+      - ./db-postgres-teste:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+volumes:
+  db-postgres-teste:
